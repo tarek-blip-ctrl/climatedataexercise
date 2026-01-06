@@ -73,16 +73,23 @@ code {
   border-radius: 4px;
   font-family: ui-monospace, monospace;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Step-1" color="green"></tw-tag><tw-passagedata pid="1" name="climate data" tags="" position="900,400" size="100,100">(text-colour:yellow)[&#39;&#39;1.1 Create Tokens&#39;&#39;]
+tw-sidebar {
+  display: block !important;
+  visibility: visible !important;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Step-1" color="green"></tw-tag><tw-passagedata pid="1" name="climate data" tags="" position="900,400" size="100,100">[&#39;&#39;1.1 Create Tokens&#39;&#39;]
 
 Your climate data looks like this: 
 
 Observation A: 06:00 — 18°C / low wind / medium humidity
 
 There are 15 of these observations, each with a time stamp, temperature, wind, humidity. This data is the basis for your tokens. 
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
 
 Treat each observation as one token. 
 
@@ -117,7 +124,10 @@ In the case of our weather observations, they already come with a time stamp so 
 
 
 
-[[Step 2: Embeddings]] </tw-passagedata><tw-passagedata pid="2" name="Token A" tags="" position="200,700" size="100,100">&#39;&#39;Token A:&#39;&#39; 06:00 — 18°C / low wind / medium humidity
+[[Step 2: Embeddings]] 
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="2" name="Token A" tags="" position="200,700" size="100,100">&#39;&#39;Token A:&#39;&#39; 06:00 — 18°C / low wind / medium humidity
 
 &lt;hr&gt;
 (link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="3" name="Token B" tags="" position="300,700" size="100,100">&#39;&#39;Token B:&#39;&#39; 09:00 — 22°C / high wind / low humidity
@@ -184,7 +194,7 @@ For each token we create a vector or “Embedding”
 Here are [[embeddings for the first five tokens]].
  
 &lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="18" name="Introduction" tags="" position="900,100" size="100,100">(link: &quot;Menu&quot;)[
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="18" name="Introduction" tags="" position="800,50" size="100,100">(link: &quot;Menu&quot;)[
   &lt;div class=&quot;menu&quot;&gt;
    [[Step 1: Create your tokens]]
    [[Step 2: Embeddings]]
