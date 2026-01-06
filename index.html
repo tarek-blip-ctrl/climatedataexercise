@@ -84,7 +84,7 @@ Your mission is to:
 
 
 1. Turn these observations into tokens
-2. Your Text Heregive each token a numerical representation,
+2. Give each token a numerical representation,
 3. Build connections between them through attention,
 4. Extract patterns using different heads,
 5. Refine these patterns with layers,
@@ -175,7 +175,11 @@ The embedding vector is a point in a high-dimensional space where distance encod
 
 So, the raw information has been stored into the embeddings. In the following steps we will get to the key of the transformer architecture in that we want to extract some more information out from the data. As a first step to that we use the concept of “attention” in order to extract some more information out from each token and how its related to other tokens. In our toy example we are interested in two things: temperature and humidity.
 
-First, we want to know how the tokens are related to each other. You can think of it that each token “asks” a question (Q) to all the other tokens and all the other tokens respond with an answer (K). Finally what is relevant between them gets captured in a value (V). 
+First, we want to know how the tokens are related to each other. You can think of it that each token 
+
+* “Asks” a question (Q) to all the other tokens 
+* All the other tokens respond with an answer (K)
+* What is relevant between them gets captured in a value (V). 
 
 So for this step we define 3 new features: Q, K and V. For each token these new features are calculated (In our toy example they are given) In the transformer architecture these are also called: 
 
@@ -183,12 +187,10 @@ So for this step we define 3 new features: Q, K and V. For each token these new 
 * K = Key - (“What do I offer?”) 
 * V = Value - (“What info is carried forward?”)  
 
-In our toy example the values for Q,K and V are given. In a real scenario these parameters are estimated during the training process. 
-
-So lets assume we have for our first five tokens from above the following values for [[Q, K and V.]]
+Let&#39;s look at [[Q, K and V]] for our example.
 
 
-</tw-passagedata><tw-passagedata pid="22" name="Q, K and V." tags="" position="600,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.1 Question, Key and Value&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="22" name="Q, K and V" tags="" position="600,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.1 Question, Key and Value&#39;&#39;]
 
 In our toy example the values for Q,K and V are given. In a real scenario these parameters are estimated during the training process. 
 
@@ -242,7 +244,7 @@ Let’s do the calculation for the token A and C and get the attention score:
 
 Here are all the calculations for the [[attention score for your 5 tokens A to E]]. </tw-passagedata><tw-passagedata pid="23" name="attention score for your 5 tokens A to E" tags="" position="725,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.2 Attention score&#39;&#39;]
 
-Here are the attention scores. See the green number from the calculation above.
+Here are the attention scores. See the orange number from the calculation in the previous step.
 
 &lt;table border=&quot;1&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
   &lt;tr&gt;
