@@ -9,7 +9,10 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Climate data.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Climate data" startnode="18" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="90B6925C-C1D9-477A-9DCF-6120767298AC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Step-1" color="green"></tw-tag><tw-passagedata pid="1" name="climate data" tags="" position="900,400" size="100,100">(text-colour:yellow)[&#39;&#39;1.1 Create Tokens&#39;&#39;]
+<tw-storydata name="Climate data" startnode="18" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="90B6925C-C1D9-477A-9DCF-6120767298AC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
+  background-color: white;
+  color: black;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Step-1" color="green"></tw-tag><tw-passagedata pid="1" name="climate data" tags="" position="900,400" size="100,100">(text-colour:yellow)[&#39;&#39;1.1 Create Tokens&#39;&#39;]
 
 Your climate data looks like this: 
 
@@ -70,13 +73,13 @@ In the case of our weather observations, they already come with a time stamp so 
 
 </tw-passagedata><tw-passagedata pid="16" name="Token O" tags="" position="1600,700" size="100,100">Token O: 17:00 — 22°C / medium wind / medium humidity
 
-</tw-passagedata><tw-passagedata pid="17" name="Step 2: Embeddings" tags="" position="450,825" size="100,100">(text-colour:yellow)[&#39;&#39;Step 2: Embeddings&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="17" name="Step 2: Embeddings" tags="" position="450,825" size="100,100">[&#39;&#39;Step 2: Embeddings&#39;&#39;]
 
 Semantic Encoding: Each token is converted from a descriptive word/phrase into a short numerical vector called an Embedding. The numbers within this vector capture the meaning and features (e.g., Temp, Humidity) of the observation, transforming language/data into a format the model can process mathematically.
 
  For each token we create a vector or “Embedding” 
  
- Here are [[embeddings for the first five tokens]].</tw-passagedata><tw-passagedata pid="18" name="Introduction" tags="" position="900,100" size="100,100">(text-colour:yellow)[&#39;&#39;Introduction&#39;&#39;]
+ Here are [[embeddings for the first five tokens]].</tw-passagedata><tw-passagedata pid="18" name="Introduction" tags="" position="900,100" size="100,100">[&#39;&#39;Introduction&#39;&#39;]
 
 You begin with 15 weather observations taken throughout the day. Each observation describes temperature, wind, humidity, and the time it was recorded.
 
@@ -96,13 +99,13 @@ This exercise is meant to show that the transformer is not magical or mysterious
 
 Go to [[Step 1: Create your tokens]]
 
-</tw-passagedata><tw-passagedata pid="19" name="Step 1: Create your tokens" tags="" position="900,300" size="100,100">(text-colour:yellow)[&#39;&#39;Step 1: Create your tokens&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="19" name="Step 1: Create your tokens" tags="" position="900,300" size="100,100">[&#39;&#39;Step 1: Create your tokens&#39;&#39;]
 
 Tokenization &amp; Sequencing: 
 
 Raw, real-world observations (weather data) are broken down into discrete units called Tokens. These tokens are arranged in a sequence (chronological order) so the model knows the flow of events. This is the foundational step of turning raw input into a structured sequence.
 
-You look at your [[climate data]] and think about how you would tokenize that. </tw-passagedata><tw-passagedata pid="20" name="embeddings for the first five tokens" tags="" position="600,825" size="100,100">(text-colour:yellow)[&#39;&#39;2.1 Vector or &quot;Embedding&quot;&#39;&#39;]
+You look at your [[climate data]] and think about how you would tokenize that. </tw-passagedata><tw-passagedata pid="20" name="embeddings for the first five tokens" tags="" position="600,825" size="100,100">[&#39;&#39;2.1 Vector or &quot;Embedding&quot;&#39;&#39;]
 
 For each token we create a vector or “Embedding” 
 
@@ -171,7 +174,7 @@ For example:
 The embedding vector is a point in a high-dimensional space where distance encodes semantic similarity. During training, embeddings adjust to reflect the true statistical relationships in the data. So embeddings encode “what this token means” in a way a model can learn from.]
 
 
-[[Step 3: Build Self Attention]]</tw-passagedata><tw-passagedata pid="21" name="Step 3: Build Self Attention" tags="" position="450,950" size="100,100">(text-colour:yellow)[&#39;&#39;Step 3: Build self-attention&#39;&#39;]
+[[Step 3: Build Self Attention]]</tw-passagedata><tw-passagedata pid="21" name="Step 3: Build Self Attention" tags="" position="450,950" size="100,100">[&#39;&#39;Step 3: Build self-attention&#39;&#39;]
 
 So, the raw information has been stored into the embeddings. In the following steps we will get to the key of the transformer architecture in that we want to extract some more information out from the data. As a first step to that we use the concept of “attention” in order to extract some more information out from each token and how its related to other tokens. In our toy example we are interested in two things: temperature and humidity.
 
@@ -190,7 +193,7 @@ So for this step we define 3 new features: Q, K and V. For each token these new 
 Let&#39;s look at [[Q, K and V]] for our example.
 
 
-</tw-passagedata><tw-passagedata pid="22" name="Q, K and V" tags="" position="600,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.1 Question, Key and Value&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="22" name="Q, K and V" tags="" position="600,950" size="100,100">[&#39;&#39;3.1 Question, Key and Value&#39;&#39;]
 
 In our toy example the values for Q,K and V are given. In a real scenario these parameters are estimated during the training process. 
 
@@ -242,7 +245,7 @@ Let’s do the calculation for the token A and C and get the attention score:
 
 * Example: Token A (Q = [0.2, 0.6]) vs Token C (K = [0.5, 0.6]) → Score = (0.2×0.5) + (0.6×0.6) = 0.42
 
-Here are all the calculations for the [[attention score for your 5 tokens A to E]]. </tw-passagedata><tw-passagedata pid="23" name="attention score for your 5 tokens A to E" tags="" position="725,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.2 Attention score&#39;&#39;]
+Here are all the calculations for the [[attention score for your 5 tokens A to E]]. </tw-passagedata><tw-passagedata pid="23" name="attention score for your 5 tokens A to E" tags="" position="725,950" size="100,100">[&#39;&#39;3.2 Attention score&#39;&#39;]
 
 Here are the attention scores. See the orange number from the calculation in the previous step.
 
@@ -343,7 +346,7 @@ For the sake of simplicity we ignore the further steps with V. With the help of 
 
 
 
-</tw-passagedata><tw-passagedata pid="24" name="Step 3 Reflection task" tags="" position="875,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.3 Reflection task&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="24" name="Step 3 Reflection task" tags="" position="875,950" size="100,100">[&#39;&#39;3.3 Reflection task&#39;&#39;]
 
 Why does comparing tokens to each other help prediction?
 
@@ -365,7 +368,7 @@ Technically:
 * Thus, attention allows the model to focus dynamically on the most relevant information.]
 
 
-[[Additional Creative Task]]</tw-passagedata><tw-passagedata pid="25" name="Additional Creative Task" tags="" position="1000,950" size="100,100">(text-colour:yellow)[&#39;&#39;3.4 Additional task&#39;&#39;]
+[[Additional Creative Task]]</tw-passagedata><tw-passagedata pid="25" name="Additional Creative Task" tags="" position="1000,950" size="100,100">[&#39;&#39;3.4 Additional task&#39;&#39;]
 
 Define Q, K and V in the context of a hiring process
 
@@ -375,7 +378,7 @@ Define Q, K and V in the context of a hiring process
 Answer: Q = job description (What the token needs), K = candidate’s skills (What the token offers), V = what the candidate does if hired (What gets used)]
 
 
-[[Step 4: Mutli-head Attention: See patterns from multiple perspectives]]</tw-passagedata><tw-passagedata pid="26" name="Step 4: Mutli-head Attention: See patterns from multiple perspectives" tags="" position="450,1075" size="100,100">(text-colour:yellow)[&#39;&#39;Step 4: Mutli-head Attention: See patterns from multiple perspectives&#39;&#39;]
+[[Step 4: Mutli-head Attention: See patterns from multiple perspectives]]</tw-passagedata><tw-passagedata pid="26" name="Step 4: Mutli-head Attention: See patterns from multiple perspectives" tags="" position="450,1075" size="100,100">[&#39;&#39;Step 4: Mutli-head Attention: See patterns from multiple perspectives&#39;&#39;]
 
 In the previous step we looked at how the tokens are related to each other (attention scores). In this step we want to get more information out from each token and related this information to the other tokens. We would like to distill relevant information out in order to keep that for future steps. 
 
@@ -441,7 +444,7 @@ So now we have extracted further information from each individual token. As we a
 Let&#39;s define our Q, K and V in order to capture those dependencies.
 
 [[Token O as an example]]
-</tw-passagedata><tw-passagedata pid="27" name="Token O as an example" tags="" position="600,1075" size="100,100">(text-colour:yellow)[&#39;&#39;4.1 Token O as an example&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="27" name="Token O as an example" tags="" position="600,1075" size="100,100">[&#39;&#39;4.1 Token O as an example&#39;&#39;]
 
 For illustration let’s focus on Token O. 
 
@@ -473,7 +476,7 @@ Let’s spend a bit more time here to understand how this information is process
 
 ]
 
-[[Step 4: Reflection task]]</tw-passagedata><tw-passagedata pid="28" name="Review optional content" tags="" position="725,1075" size="100,100">(text-colour:yellow)[&#39;&#39;4.2 Optional content&#39;]&#39;
+[[Step 4: Reflection task]]</tw-passagedata><tw-passagedata pid="28" name="Review optional content" tags="" position="725,1075" size="100,100">[&#39;&#39;4.2 Optional content&#39;]&#39;
 
 We need to compute “Attention Weights” (using a softmax function) .
 
@@ -550,7 +553,7 @@ The Final Attention Output for Token O is the average of the two head outputs:
 Now this is this updated embedding captures now all the information from the two “Teams” which are relevant for Token O. Please note we just did the calculation for one Token as an example. So basically, we would need to do this for all the other tokens as well to get their updated multi-head attention scores. 
 
 [[Step 4: Reflection task]]
-</tw-passagedata><tw-passagedata pid="29" name="Step 4: Reflection task" tags="" position="875,1075" size="100,100">(text-colour:yellow)[&#39;&#39;4.3 Reflection task&#39;&#39;]
+</tw-passagedata><tw-passagedata pid="29" name="Step 4: Reflection task" tags="" position="875,1075" size="100,100">[&#39;&#39;4.3 Reflection task&#39;&#39;]
 
 Why does having multiple perspectives improve model understanding?
 
@@ -568,7 +571,7 @@ Technically:
 
 Multi-head attention is why transformers can learn nuanced patterns in language, images, weather, fraud, and more.]
 
-[[Step 5: Stacking Layers]]</tw-passagedata><tw-passagedata pid="30" name="Step 5: Stacking Layers" tags="" position="450,1200" size="100,100">(text-colour:yellow)[&#39;&#39;Step 5: Stacking layers&#39;&#39;]
+[[Step 5: Stacking Layers]]</tw-passagedata><tw-passagedata pid="30" name="Step 5: Stacking Layers" tags="" position="450,1200" size="100,100">[&#39;&#39;Step 5: Stacking layers&#39;&#39;]
 
 In this step we want to deepen the model’s reasoning by making use of different layers. In our toy example we take the “updated” embeddings from step 4 and treat these as new embeddings. This will create another layer. We treat the output from the first layer&#39;s Multi-Head Attention as the input/embedding for the second layer, illustrating refinement.
 
@@ -610,7 +613,7 @@ Layers build knowledge step-by-step,  just like we do. Human example:
 * Technically, each layer refines the previous one’s output with new attention and transformations. This hierarchical structure extracts progressively higher-level features. Hence layers can be thought of as the depth of reasoning of the model.
 ]
 
-[[Step 6 Prediction Phase]]</tw-passagedata><tw-passagedata pid="31" name="Step 6 Prediction Phase" tags="" position="450,1325" size="100,100">&#39;&#39;(text-colour:yellow)[Step 6: Prediction phase]&#39;&#39;
+[[Step 6 Prediction Phase]]</tw-passagedata><tw-passagedata pid="31" name="Step 6 Prediction Phase" tags="" position="450,1325" size="100,100">&#39;&#39;[Step 6: Prediction phase]&#39;&#39;
 
 Let&#39;s predict the Output Example (Token O) 
 
@@ -637,7 +640,7 @@ For that we simply compare the values of Humidity (0.700) and Temp (0.450). We s
 
 Prediction for Token O’s conditions (17.00): Rain 
 
-(text-colour:yellow)[&#39;&#39;&#39;&#39;Lessons learned&#39;&#39;&#39;&#39;]
+[&#39;&#39;Lessons learned&#39;&#39;]
 
 The comparison between the initial Embedding and the Layer 2 Output shows how the Transformer shifts the feature weights based on the context of all other tokens; A through to Token N and its own learned focus (via the Attention Heads).</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
