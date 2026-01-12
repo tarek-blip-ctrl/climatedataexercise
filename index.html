@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Climate data.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Climate data" startnode="18" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="90B6925C-C1D9-477A-9DCF-6120767298AC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
+<tw-storydata name="Climate data" startnode="2" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="90B6925C-C1D9-477A-9DCF-6120767298AC" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
   background-color: white;
   color: black;
 }
@@ -83,159 +83,11 @@ tw-sidebar {
   z-index: 1000;
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Step-1" color="green"></tw-tag><tw-passagedata pid="1" name="climate data" tags="" position="900,400" size="100,100">[&#39;&#39;1.1 Create Tokens&#39;&#39;]
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Step-1" color="green"></tw-tag><tw-passagedata pid="1" name="Step 2: Embeddings" tags="" position="400,675" size="100,100">[&#39;&#39;Step 2: Embeddings&#39;&#39;]
 
-Your climate data looks like this: 
-
-Observation A: 06:00 — 18°C / low wind / medium humidity
-
-There are 15 of these observations, each with a time stamp, temperature, wind, humidity. This data is the basis for your tokens. 
-
-Treat each observation as one token. 
-
-We create 15 tokens from these 15 observations. 
-
-[[Token A]]
-[[Token B]]
-[[Token C]]
-[[Token D]]
-[[Token E]]
-[[Token F]]
-[[Token G]]
-[[Token H]]
-[[Token I]]
-[[Token J]]
-[[Token K]]
-[[Token L]]
-[[Token M]]
-[[Token N]]
-[[Token O]]
-
-
-REFLECTION: These token first need to be arranged in sequences order. Why?
-
-(input-box:&quot;Answers are not saved or submitted.&quot;)
-
-(link: &quot;I have an explanation in mind&quot;)[
-
-In weather, fraud, supply chains, language, the order in which events happen is essential to understanding patterns. Transformers process sequences because they aim to learn temporal or structural dependencies. The model builds relationships between tokens based on where they occur and what comes before/after. Even though transformers can “look at everything at once,” they still need sequence order encoded (positional encoding) to learn how events unfold.
-
-In the case of our weather observations, they already come with a time stamp so the model has information on the sequence order. If there would be no time stamp we would have to sequence them manually.]
-
-
-
-[[Step 2: Embeddings]] 
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="2" name="Token A" tags="" position="200,700" size="100,100">&#39;&#39;Token A:&#39;&#39; 06:00 — 18°C / low wind / medium humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="3" name="Token B" tags="" position="300,700" size="100,100">&#39;&#39;Token B:&#39;&#39; 09:00 — 22°C / high wind / low humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="4" name="Token C" tags="" position="400,700" size="100,100">&#39;&#39;Token C:&#39;&#39; 03:00 — 15°C / calm wind / high humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="5" name="Token D" tags="" position="500,700" size="100,100">&#39;&#39;Token D:&#39;&#39; 12:00 — 25°C / medium wind / medium humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="6" name="Token E" tags="" position="600,700" size="100,100">&#39;&#39;Token E: 21:00 — 19°C / high wind / high humidity&#39;&#39;
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="7" name="Token F" tags="" position="700,700" size="100,100">&#39;&#39;Tooken F:&#39;&#39; 00:00 — 14°C / medium wind / medium humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="8" name="Token G" tags="" position="800,700" size="100,100">&#39;&#39;Token G:&#39;&#39; 18:00 — 20°C / calm wind / low humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="9" name="Token H" tags="" position="900,700" size="100,100">&#39;&#39;Token H: &#39;&#39;15:00 — 24°C / medium wind / low humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="10" name="Token I" tags="" position="1000,700" size="100,100">Token I: 23:00 — 17°C / low wind / high humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="11" name="Token J" tags="" position="1100,700" size="100,100">Token J: 10:00 — 23°C / high wind / medium humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="12" name="Token K" tags="" position="1200,700" size="100,100">Token K: 04:00 — 16°C / medium wind / high humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="13" name="Token L" tags="" position="1300,700" size="100,100">Token L: 01:00 — 13°C / calm wind / high humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="14" name="Token M" tags="" position="1400,700" size="100,100">&#39;&#39;Token M:&#39;&#39; 08:00 — 20°C / medium wind / low humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-
-</tw-passagedata><tw-passagedata pid="15" name="Token N" tags="" position="1500,700" size="100,100">Token N: 14:00 — 24°C / high wind / low humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-
-</tw-passagedata><tw-passagedata pid="16" name="Token O" tags="" position="1600,700" size="100,100">Token O: 17:00 — 22°C / medium wind / medium humidity
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-
-</tw-passagedata><tw-passagedata pid="17" name="Step 2: Embeddings" tags="" position="450,825" size="100,100">[&#39;&#39;Step 2: Embeddings&#39;&#39;]
-
-Semantic Encoding: Each token is converted from a descriptive word/phrase into a short numerical vector called an Embedding. The numbers within this vector capture the meaning and features (e.g., Temp, Humidity) of the observation, transforming language/data into a format the model can process mathematically.
+Now that we have created the tokens, we are ready for the embedding. Typically, embeddings are the result of training. The model starts with some random embedding and during training it updates these. In this toy example, we assume that the embeddings are given (for the first five tokens)
 
 For each token we create a vector or “Embedding” 
- 
-Here are [[embeddings for the first five tokens]].
- 
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="18" name="Introduction" tags="" position="800,50" size="100,100">(link: &quot;Menu&quot;)[
-  &lt;div class=&quot;menu&quot;&gt;
-   [[Step 1: Create your tokens]]
-   [[Step 2: Embeddings]]
-   [[Step 3: Build Self Attention]]
-   [[Step 4: Multi-head Attention]]
-   [[Step 5: Stacking Layers]]
-   [[Step 6 Prediction Phase]]
-  &lt;/div&gt;
-]
-&lt;hr&gt;
-
-[&#39;&#39;Introduction&#39;&#39;]
-
-You begin with 15 weather observations taken throughout the day. Each observation describes temperature, wind, humidity, and the time it was recorded.
-
-Your mission is to:
-
-
-1. Turn these observations into tokens
-2. Give each token a numerical representation,
-3. Build connections between them through attention,
-4. Extract patterns using different heads,
-5. Refine these patterns with layers,
-6. Make a weather prediction for one chosen token.
-
-In other words: You will step into the shoes of a transformer model and manually simulate what happens inside it.
-
-This exercise is meant to show that the transformer is not magical or mysterious. It follows a precise and understandable flow of numerical reasoning. And by walking through it with small numbers, you will develop an intuition that even many AI practitioners never get. As you go through each step, you’ll also answer reflection questions that help you uncover the “why” behind the mechanism, not just the “how”.
-
-Go to [[Step 1: Create your tokens]]
-
-</tw-passagedata><tw-passagedata pid="19" name="Step 1: Create your tokens" tags="" position="900,300" size="100,100">[&#39;&#39;Step 1: Create your tokens&#39;&#39;]
-
-Tokenization &amp; Sequencing: 
-
-Raw, real-world observations (weather data) are broken down into discrete units called Tokens. These tokens are arranged in a sequence (chronological order) so the model knows the flow of events. This is the foundational step of turning raw input into a structured sequence.
-
-You look at your [[climate data]] and think about how you would tokenize that. 
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="20" name="embeddings for the first five tokens" tags="" position="600,825" size="100,100">[&#39;&#39;2.1 Vector or &quot;Embedding&quot;&#39;&#39;]
 
 For each token we create a vector or “Embedding” 
 
@@ -279,56 +131,162 @@ For the Embedding vectors we know:
 * Third entry: humidity 
 * Fourth entry: time stamp 
 
-For example, observe the fourth entry, the later time stamps have a higher value.
-
-(b4r:&quot;solid&quot;)+(b4r-colour:orange)[Where do the embedding numbers come from?
-
-Now we gave our raw observations to the model. Each observation is considered as a token and the model came up with an embedding. In a real scenario, the embeddings are estimated during the training phase. The model starts with some random embedding and during training it updates these. In our toy example we simply assumed a fixed set of embeddings already.]
-
-REFLECTION: What types of information are now captured in these numbers? 
+&lt;div style=&quot;
+  background-color: #fff3cd;
+  border-left: 6px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 15px;
+&quot;&gt;&lt;strong&gt;🧠 Think about this:&lt;/strong&gt;&lt;br&gt;
+1. What do you observe from the fourth entry for each embedding? 
+2. What types of information are now captured in these numbers?
+&lt;/div&gt;
+Use the space provided to think through your answer.
 
 (input-box:&quot;Answers are not saved or submitted.&quot;)
 
-(link: &quot;I have an explanation in mind&quot;)[
-Embeddings capture compressed meaning. By turning each token into a small vector of numbers, we represent:
+(link: &quot;I have an explanation in mind&quot;)[&#39;&#39;Feedback:&#39;&#39;
 
-* similar weather → similar embeddings
-* unusual patterns → distinctive embeddings
-* combinations of conditions → structured numeric patterns
+1. Later time stamps have a higher number. 
 
-For example:
+2. Embeddings capture compressed meaning. By turning each token into a small vector of numbers, we represent:
 
-* High humidity might always correspond to a larger value in one embedding dimension.
-* Wind speed might influence another embedding dimension.
+** similar weather → similar embeddings
+** unusual patterns → distinctive embeddings
+** combinations of conditions → structured numeric patterns
 
-The embedding vector is a point in a high-dimensional space where distance encodes semantic similarity. During training, embeddings adjust to reflect the true statistical relationships in the data. So embeddings encode “what this token means” in a way a model can learn from.]
+For example: High humidity might always correspond to a larger value in one embedding dimension. Wind speed might influence another embedding dimension. The embedding vector is a point in a high-dimensional space where distance encodes semantic similarity. During training, embeddings adjust to reflect the true statistical relationships in the data. So, embeddings encode “what this token means” in a way a model can learn from.
+]
 
+&lt;div style=&quot;
+  background-color:#fff3e0;
+  border-left:6px solid #ff9800;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;
+&lt;strong&gt;🤖 How This Relates to LLMs&lt;/strong&gt;&lt;br&gt;
+Climate Case:  Turning &quot;High Humidity&quot; into a numerical vector like `[0.3, 0.1, 0.9, 0.1]`.
 
-[[Step 3: Build Self Attention]]
+LLM Bridge Task: Embeddings turn concepts into math. In an LLM, the word &#39;CEO&#39; and &#39;Leadership&#39; are placed close together in a high-dimensional space. 
 
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="21" name="Step 3: Build Self Attention" tags="" position="450,950" size="100,100">[&#39;&#39;Step 3: Build self-attention&#39;&#39;]
+Reflection: If your company uses specific jargon that doesn&#39;t exist in the general public (e.g., a proprietary project name), how might &#39;generic&#39; embeddings fail to capture the true meaning of your internal documents?&quot;.
 
-So, the raw information has been stored into the embeddings. In the following steps we will get to the key of the transformer architecture in that we want to extract some more information out from the data. As a first step to that we use the concept of “attention” in order to extract some more information out from each token and how its related to other tokens. In our toy example we are interested in two things: temperature and humidity.
+(link:&quot;Reveal&quot;)[&#39;&#39;Answer:&#39;&#39;
 
-First, we want to know how the tokens are related to each other. You can think of it that each token 
+Embeddings are usually learned from general internet data. If a proprietary term like &quot;Project Blue&quot; refers to a &quot;divestiture strategy,&quot; a generic embedding might map it to &quot;color&quot; or &quot;sky&quot; instead. This causes the model to &quot;misunderstand&quot; the semantic distance between your internal concepts, leading to irrelevant or confusing outputs. ]
 
-* “Asks” a question (Q) to all the other tokens 
-* All the other tokens respond with an answer (K)
-* What is relevant between them gets captured in a value (V). 
-
-So for this step we define 3 new features: Q, K and V. For each token these new features are calculated (In our toy example they are given) In the transformer architecture these are also called: 
-
-* Q = Question - (“What do I need?”) 
-* K = Key - (“What do I offer?”) 
-* V = Value - (“What info is carried forward?”)  
-
-Let&#39;s look at [[Q, K and V]] for our example.
+&lt;/div&gt;
 
 &lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 3: Build Self Attention]] </tw-passagedata><tw-passagedata pid="2" name="Introduction" tags="" position="800,50" size="100,100">(link: &quot;Menu&quot;)[
+  &lt;div class=&quot;menu&quot;&gt;
+   [[Step 1: Create your tokens]]
+   [[Step 2: Embeddings]]
+   [[Step 3: Build Self Attention]]
+   [[Step 4: Multi-head Attention]]
+   [[Step 5: Stacking Layers]]
+   [[Step 6 Prediction Phase]]
+  &lt;/div&gt;
+]
+&lt;hr&gt;
 
-</tw-passagedata><tw-passagedata pid="22" name="Q, K and V" tags="" position="600,950" size="100,100">[&#39;&#39;3.1 Question, Key and Value&#39;&#39;]
+[&#39;&#39;Introduction&#39;&#39;]
+
+You begin with 15 weather observations taken throughout the day. Each observation describes temperature, wind, humidity, and the time it was recorded.
+
+Your mission is to:
+
+
+1. Turn these observations into tokens
+2. Give each token a numerical representation,
+3. Build connections between them through attention,
+4. Extract patterns using different heads,
+5. Refine these patterns with layers,
+6. Make a weather prediction for one chosen token.
+
+In other words: You will step into the shoes of a transformer model and manually simulate what happens inside it.
+
+This exercise is meant to show that the transformer is not magical or mysterious. It follows a precise and understandable flow of numerical reasoning. And by walking through it with small numbers, you will develop an intuition that even many AI practitioners never get. As you go through each step, you’ll also answer reflection questions that help you uncover the “why” behind the mechanism, not just the “how”.
+
+Go to [[Step 1: Create your tokens]]
+
+</tw-passagedata><tw-passagedata pid="3" name="Step 1: Create your tokens" tags="" position="900,300" size="100,100">[&#39;&#39;Step 1: Create your tokens&#39;&#39;]
+
+Your climate data looks like this:
+
+(b4r:&quot;solid&quot;)+(b4r-colour:orange)[Observation A: 06:00 — 18°C / low wind / medium humidity]
+
+
+In our example, there are 15 of these observations, each with a time stamp, temperature, wind, humidity. This data is the basis for your tokens. 
+
+We treat each observation as one token; 15 tokens from these 15 observations. 
+
+&lt;table border=&quot;1&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Token&lt;/th&gt;
+    &lt;th&gt;Time&lt;/th&gt;
+    &lt;th&gt;Temperature&lt;/th&gt;
+    &lt;th&gt;Wind&lt;/th&gt;
+    &lt;th&gt;Humidity&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;06:00&lt;/td&gt;&lt;td&gt;18°C&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;09:00&lt;/td&gt;&lt;td&gt;22°C&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;03:00&lt;/td&gt;&lt;td&gt;15°C&lt;/td&gt;&lt;td&gt;Calm&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;D&lt;/td&gt;&lt;td&gt;12:00&lt;/td&gt;&lt;td&gt;25°C&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;E&lt;/td&gt;&lt;td&gt;21:00&lt;/td&gt;&lt;td&gt;19°C&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;00:00&lt;/td&gt;&lt;td&gt;14°C&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;G&lt;/td&gt;&lt;td&gt;18:00&lt;/td&gt;&lt;td&gt;20°C&lt;/td&gt;&lt;td&gt;Calm&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;H&lt;/td&gt;&lt;td&gt;15:00&lt;/td&gt;&lt;td&gt;24°C&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;I&lt;/td&gt;&lt;td&gt;23:00&lt;/td&gt;&lt;td&gt;17°C&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;J&lt;/td&gt;&lt;td&gt;10:00&lt;/td&gt;&lt;td&gt;23°C&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;K&lt;/td&gt;&lt;td&gt;04:00&lt;/td&gt;&lt;td&gt;16°C&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;L&lt;/td&gt;&lt;td&gt;01:00&lt;/td&gt;&lt;td&gt;13°C&lt;/td&gt;&lt;td&gt;Calm&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;M&lt;/td&gt;&lt;td&gt;08:00&lt;/td&gt;&lt;td&gt;20°C&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;14:00&lt;/td&gt;&lt;td&gt;24°C&lt;/td&gt;&lt;td&gt;High&lt;/td&gt;&lt;td&gt;Low&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;O&lt;/td&gt;&lt;td&gt;17:00&lt;/td&gt;&lt;td&gt;22°C&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;td&gt;Medium&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;div style=&quot;
+  background-color: #fff3cd;
+  border-left: 6px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 15px;
+&quot;&gt;&lt;strong&gt;🧠 Think about this:&lt;/strong&gt;&lt;br&gt;
+Why does this model need a sequence rather than an unordered list?
+&lt;/div&gt;
+Use the space provided to think through your answer.
+
+(input-box:&quot;Answers are not saved or submitted.&quot;)
+
+(link: &quot;I have an explanation in mind&quot;)[&#39;&#39;Feedback:&#39;&#39;
+
+You should understand that the sequence order of the tokens is very important. In the case for the observations, they already come with a time stamp, so the model has information on the sequence order. If there would be no time stamp, we would have to sequence them manually.
+
+
+Sequence order is necessary because the meaning often depends on order. In weather, fraud, supply chains, language, the order in which events happen is essential to understanding patterns. Transformers process sequences because they aim to learn temporal or structural dependencies. The model builds relationships between tokens based on where they occur and what comes before/after. Even though transformers can “look at everything at once,” they still need sequence order encoded (positional encoding) to learn how events unfold.]
+
+&lt;div style=&quot;
+  background-color:#fff3e0;
+  border-left:6px solid #ff9800;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;
+&lt;strong&gt;🤖 How This Relates to LLMs&lt;/strong&gt;&lt;br&gt;
+Climate Case: Observations like &quot;18°C/low wind&quot; are discrete units in a chronological sequence.
+
+LLM Bridge Task: In our climate model, tokens are weather snapshots. In an LLM, tokens are chunks of text (parts of words). If you ask an LLM to &#39;Write a legal contract,&#39; it processes the request token-by-token. 
+
+Reflection: If the model&#39;s &#39;input window&#39; is limited, how does &#39;tokenizing&#39; a 100-page PDF vs. a 1-page memo change the model&#39;s ability to maintain consistency from start to finish?&quot;
+
+(link:&quot;Reveal&quot;)[&#39;&#39;Answer:&#39;&#39;
+
+Tokenization consumes &quot;space&quot; in the model&#39;s memory (context window). For a 1-page memo, the model can &quot;see&quot; every token at once, ensuring perfect consistency. For a 100-page PDF, the model may exceed its window, meaning it &quot;forgets&quot; the beginning of the document by the time it reaches the end. This leads to contradictions or loss of context in long-form analysis. (More recent models allow for much larger context now.]
+
+&lt;/div&gt;
+
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 2: Embeddings]] </tw-passagedata><tw-passagedata pid="4" name="Step 3 Deep Dive" tags="" position="750,600" size="100,100">[&#39;&#39;Step 3 Deep Dive&#39;&#39;]
 
 In our toy example the values for Q,K and V are given. In a real scenario these parameters are estimated during the training process. 
 
@@ -379,11 +337,6 @@ So now we want to understand the relationships or the “attention” between th
 Let’s do the calculation for the token A and C and get the attention score: 
 
 * Example: Token A (Q = [0.2, 0.6]) vs Token C (K = [0.5, 0.6]) → Score = (0.2×0.5) + (0.6×0.6) = 0.42
-
-Here are all the calculations for the [[attention score for your 5 tokens A to E]]. 
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="23" name="attention score for your 5 tokens A to E" tags="" position="725,950" size="100,100">[&#39;&#39;3.2 Attention score&#39;&#39;]
 
 Here are the attention scores. See the orange number from the calculation in the previous step.
 
@@ -460,292 +413,65 @@ Download the (link: &quot;attention score table&quot;)[(open-url: &quot;https://
   &lt;/tr&gt;
 &lt;/table&gt;
 
-What do you notice for self attention, the diagonal elements? 
+&lt;div style=&quot;
+  background-color: #fff3cd;
+  border-left: 6px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 15px;
+&quot;&gt;&lt;strong&gt;🧠 Think about this:&lt;/strong&gt;&lt;br&gt;
+
+1. How would you interpret the numbers in the matrix? 
+2. What do you notice for self-attention, the diagonal elements? 
+&lt;/div&gt;
+Use the space provided to think through your answer.
 
 (input-box:&quot;Answers are not saved or submitted.&quot;)
 
+(link: &quot;I have an explanation in mind&quot;)[&#39;&#39;Feedback:&#39;&#39;
 
-(link:&quot;I have an explanation in mind&quot;)[(show:?1)
+1. The larger the product, the stronger the “attention” between the tokens.
 
-* The dot product Q(A) · K(A) answers: “How much should A pay attention to itself when computing its output representation?”
-* A token’s own meaning is usually highly relevant. If a token did not attend to itself, its representation would get overwritten entirely by other tokens — which is usually undesirable.
+2. For the self-attention: 
 
-For the sake of simplicity we ignore the further steps with V. With the help of V final attention outputs are calculated and further processed.]
+** The dot product Q(A) · K(A) answers: “How much should A pay attention to itself when computing its output representation?&quot;
+** A token’s own meaning is usually highly relevant. If a token did not attend to itself, its representation would get overwritten entirely by other tokens, which is usually undesirable.
 
+For the sake of simplicity, we ignore the further steps with V. With the help of V final attention outputs are calculated and further processed.
+]
 
-[[Step 3 Reflection task]]
 
 &lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 3 Reflection task]] </tw-passagedata><tw-passagedata pid="5" name="Step 3 Reflection task" tags="" position="1000,725" size="100,100">[&#39;&#39;3.3 Reflection task&#39;&#39;]
 
-
-
-
-
-
-
-
-
-
-</tw-passagedata><tw-passagedata pid="24" name="Step 3 Reflection task" tags="" position="875,950" size="100,100">[&#39;&#39;3.3 Reflection task&#39;&#39;]
-
+&lt;div style=&quot;
+  background-color: #fff3cd;
+  border-left: 6px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 15px;
+&quot;&gt;&lt;strong&gt;🧠 Think about this:&lt;/strong&gt;&lt;br&gt;
 Why does comparing tokens to each other help prediction?
+&lt;/div&gt;
+Use the space provided to think through your answer.
 
 (input-box:&quot;Answers are not saved or submitted.&quot;)
 
-(link:&quot;I have an explanation in mind&quot;)[(show:?1)
+(link: &quot;I have an explanation in mind&quot;)[&#39;&#39;Feedback:&#39;&#39;
 
-Because context determines meaning. attention lets each token “ask”: “Which other tokens help me interpret myself?”, Examples:
+Because context determines meaning. Attention lets each token “ask”: “Which other tokens help me interpret myself?”, Examples:
 
 * A temperature spike matters only if previous temperatures are low.
 * A sudden humidity rise matters more if wind shifts.
-* A strange transaction matters more if preceded by a location change.
-
-Technically:
-
+* A strange transaction matters more if preceded by a location change. Technically:
 * Self-attention computes similarity between Query (Q) and Key (K) vectors.
 * High similarity → token A attends strongly to token B.
 * This helps the model capture dependencies across the whole sequence, no matter how far apart they are.
-* Thus, attention allows the model to focus dynamically on the most relevant information.]
 
-
-[[Additional Creative Task]]
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="25" name="Additional Creative Task" tags="" position="1000,950" size="100,100">[&#39;&#39;3.4 Additional task&#39;&#39;]
-
-Define Q, K and V in the context of a hiring process
-
-(input-box:&quot;Answers are not saved or submitted.&quot;)
-
-(link:&quot;I have an explanation in mind&quot;)[(show:?1)
-Answer: Q = job description (What the token needs), K = candidate’s skills (What the token offers), V = what the candidate does if hired (What gets used)]
-
-
-[[Step 4: Multi-head Attention]]
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="26" name="Token O as an example" tags="" position="600,1075" size="100,100">[&#39;&#39;4.1 Token O as an example&#39;&#39;]
-
-For illustration let’s focus on Token O. 
-
-We have our query focuses for each head from the table above: 
-
-* `Head1 q_focus1(O) = 0.630`
-* `Head2 q_focus2(O) = 0.520`
-
-Now we want to compute raw attention scores `(we compare Q and K in this multihead attention now by calculating: q_focus × k_focus)`. Here we treat Q and K being the same values. We calculate Token O’s score against Token A and Token B as an example: 
-
-For Head 1 we get: 
-
-* `Score (O →A) = 0.630 x 0.370 = 0.233`
-* `Score (O →B) = 0.630 x 0.540 = 0.340 `
-* … 
-
-For Head 2 we get: 
-
-* `Score (O →A) = 0.520 x 0.440 = 0.229`
-* `Score (O →B) = 0.520 x 0.340 = 0.177 `
-
-Now we know how the attention between the different tokens with regards to the different “teams”. We might have a “Temperature - Team” with tokens have a high score for head 1 etc. 
-
-(b4r:&quot;inset&quot;)+(b4r-colour:orange)[Optional
-
-Let’s spend a bit more time here to understand how this information is processed further. The goal here is to calculate the attention output from these two heads. Again the output will be a 4-dimensional embedding, the same size as the original embedding but now the numbers in the embeddings will change according to the new information captured. And this new information corresponds to information extracted from the attention to other tokens. 
-
-[[Review optional content]]
-
+Thus, attention allows the model to focus dynamically on the most relevant information.
 ]
 
-[[Step 4: Reflection task]]
 
 &lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="27" name="Review optional content" tags="" position="725,1075" size="100,100">[&#39;&#39;4.2 Optional content&#39;]&#39;
-
-We need to compute “Attention Weights” (using a softmax function) .
-
-The raw scores are passed through a “Softmax function” to get attention weights. The basic idea of a softmax function is to scale the original values. Here we use a simplified Softmax by dividing each score by the sum of all raw scores for that head to get Head 1 Attn Weight
-
-&lt;table border=&quot;1&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Token k&lt;/th&gt;
-    &lt;th&gt;Head 1 Raw Score&lt;/th&gt;
-    &lt;th&gt;Head 1 Attn Weight&lt;/th&gt;
-    &lt;th&gt;Head 2 Raw Score&lt;/th&gt;
-    &lt;th&gt;Head 2 Attn Weight&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;0.233&lt;/td&gt;&lt;td&gt;0.052&lt;/td&gt;&lt;td&gt;0.229&lt;/td&gt;&lt;td&gt;0.070&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;0.340&lt;/td&gt;&lt;td&gt;0.076&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;0.151&lt;/td&gt;&lt;td&gt;0.034&lt;/td&gt;&lt;td&gt;0.385&lt;/td&gt;&lt;td&gt;0.118&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;D&lt;/td&gt;&lt;td&gt;0.466&lt;/td&gt;&lt;td&gt;0.104&lt;/td&gt;&lt;td&gt;0.260&lt;/td&gt;&lt;td&gt;0.080&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;E&lt;/td&gt;&lt;td&gt;0.372&lt;/td&gt;&lt;td&gt;0.083&lt;/td&gt;&lt;td&gt;0.468&lt;/td&gt;&lt;td&gt;0.143&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;0.126&lt;/td&gt;&lt;td&gt;0.028&lt;/td&gt;&lt;td&gt;0.250&lt;/td&gt;&lt;td&gt;0.076&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;G&lt;/td&gt;&lt;td&gt;0.353&lt;/td&gt;&lt;td&gt;0.079&lt;/td&gt;&lt;td&gt;0.094&lt;/td&gt;&lt;td&gt;0.029&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;H&lt;/td&gt;&lt;td&gt;0.422&lt;/td&gt;&lt;td&gt;0.094&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;I&lt;/td&gt;&lt;td&gt;0.347&lt;/td&gt;&lt;td&gt;0.078&lt;/td&gt;&lt;td&gt;0.354&lt;/td&gt;&lt;td&gt;0.108&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;J&lt;/td&gt;&lt;td&gt;0.384&lt;/td&gt;&lt;td&gt;0.086&lt;/td&gt;&lt;td&gt;0.333&lt;/td&gt;&lt;td&gt;0.102&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;K&lt;/td&gt;&lt;td&gt;0.170&lt;/td&gt;&lt;td&gt;0.038&lt;/td&gt;&lt;td&gt;0.374&lt;/td&gt;&lt;td&gt;0.114&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;L&lt;/td&gt;&lt;td&gt;0.107&lt;/td&gt;&lt;td&gt;0.024&lt;/td&gt;&lt;td&gt;0.385&lt;/td&gt;&lt;td&gt;0.118&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;M&lt;/td&gt;&lt;td&gt;0.321&lt;/td&gt;&lt;td&gt;0.072&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;0.447&lt;/td&gt;&lt;td&gt;0.100&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;O&lt;/td&gt;&lt;td&gt;0.397&lt;/td&gt;&lt;td&gt;0.089&lt;/td&gt;&lt;td&gt;0.270&lt;/td&gt;&lt;td&gt;0.083&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr style=&quot;font-weight: bold; &quot;&gt;
-    &lt;td&gt;Σ&lt;/td&gt;
-    &lt;td&gt;4.436&lt;/td&gt;
-    &lt;td&gt;1&lt;/td&gt;
-    &lt;td&gt;3.264&lt;/td&gt;
-    &lt;td&gt;1&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-Let’s stay again with Token O: 
-
-Remember we have the original embedding: `[0.6,0.6,0.5,0.7]` and we want to “update” that with the information from our multi head attention. So we need to bring in all the information from the other tokens and for that we simply multiply each multi-head score with each of the embeddings from the other tokens: 
-
-Let’s do the calculation for the Multi-head Temperature Team: 
-
-We need all the Head 1 Attn Weights from the table and multiply them with the original embedding of each token (n) and afterwards we sum them all up. Very simple calculation.
-
-Head Output = Sum over all n Atten-Weights (O→k) x Embeddings (n) 
-
-OUT_1(O) = (0.052 x `[0.4, 0.2, 0.5, 0.3]`) + …. +(0.089 x `[0.6, 0.6,0.5,0.7]` ) 
-
-= `[0.589, 0.491, 0.446, 0.518]`
-
-This is now the “updated” embedding, capturing all the information from the Temperature Team for Token O. 
-
-Let’s do the same for the Multi-Head Humidity Team. We take the values from the table above (Head 2 Attn Weights) for each token and multiply them with the original embedding and sum them up to get the updated value for Token O: 
-
-For Head 2,
-
-OUT_2(O) = (0.070 x `[0.4, 0.2, 0.5, 0.3]`) + …. +(0.083 x `[0.6, 0.6,0.5,0.7]` ) 
-
-= `[0.420, 0.315, 0.669, 0.380]`
-
-Now we have all the information we could extract for Token O from all the other tokens. Finally we combine both updated embeddings into a single one to get the final attention Output for Token O:  
-
-Combine Head Outputs (Averaging) 
-
-The Final Attention Output for Token O is the average of the two head outputs: 
-
-`Attn_Output(O) = (OUT_1(O) + OUT_2(O)) / 2` 
-
-= (`[0.589, 0.491, 0.446, 0.518]` + `[0.420, 0.315, 0.669, 0.380]`)/2 
-
-= `[0.505,0.403,0.558,0.449]`
-
-Now this is this updated embedding captures now all the information from the two “Teams” which are relevant for Token O. Please note we just did the calculation for one Token as an example. So basically, we would need to do this for all the other tokens as well to get their updated multi-head attention scores. 
-
-[[Step 4: Reflection task]]
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata><tw-passagedata pid="28" name="Step 4: Reflection task" tags="" position="875,1075" size="100,100">[&#39;&#39;4.3 Reflection task&#39;&#39;]
-
-Why does having multiple perspectives improve model understanding?
-
-(input-box:&quot;Answers are not saved or submitted.&quot;)
-
-(link:&quot;I have an explanation in mind&quot;)[(show:?1)
-
-Because no single perspective captures the whole story. One attention head might focus on: Temperature changes Another on: Humidity spikes Another on: Wind shifts. Each head is like a specialist. Their outputs are combined to build a richer, multi-dimensional understanding.
-
-Technically:
-
-* Each head has its own learned Q, K, V projections.
-* Different heads learn different types of relationships.
-* This allows the model to model complex patterns that would be missed by a single attention head.
-
-Multi-head attention is why transformers can learn nuanced patterns in language, images, weather, fraud, and more.]
-
-[[Step 5: Stacking Layers]]
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="29" name="Step 5: Stacking Layers" tags="" position="450,1200" size="100,100">[&#39;&#39;Step 5: Stacking layers&#39;&#39;]
-
-In this step we want to deepen the model’s reasoning by making use of different layers. In our toy example we take the “updated” embeddings from step 4 and treat these as new embeddings. This will create another layer. We treat the output from the first layer&#39;s Multi-Head Attention as the input/embedding for the second layer, illustrating refinement.
-
-Part 1: Layer 1 Output becomes Layer 2 Input 
-The final Attention Output from Task 4 becomes the new refined embedding for Token O to be used in the next conceptual layer: 
-Layer 1 Output for O =  `[0.505, 0.403, 0.558, 0.449]`
-Layer 2 Input Embedding for O: `[0.505, 0.403, 0.558, 0.449]`
-
-Part 2: Second Layer Recalculation (Conceptual) 
-
-In a real model, this new vector would be passed through another Multi-Head Attention block, then a Feed-Forward Network, etc., just like the first layer. This process refines the understanding.
-
-Conceptual Example of Refinement: 
-
-* Layer 1 Output for O =  `[0.505, 0.403, 0.558, 0.449]`
-
-Interpretation: Token O has a moderate to high temperature influence (0.505) and humidity influence (0.558). the model has largely captured the raw correlations (e.g. 17:00 being warm and damp) 
-
-* Hypothetical Layer 2 Output: Let’s say after Layer 2 attention (which now uses the refined vectors of all tokens as input) the new vector for O is 
-
-Layer 2 Output for O =  `[0.450, 0.350, 0.700, 0.450]`
-
-* Interpretation: After comparing Os Layer 1 output to the others, Layer 2 determined that the Humidity influence is much more critical (0.700) for 17:00 conditions, indicating a potential focus on an approaching system (high humidity at the end of a warm day). This is the refinement - moving from simple correlations to high-level pattern recognition.  
-
-How is this similar to how humans refine understanding?
-
-(input-box:&quot;Answers are not saved or submitted.&quot;)
-
-(link:&quot;I have an explanation in mind&quot;)[(show:?1)
-
-Layers build knowledge step-by-step,  just like we do. Human example:
-
-** First look: raw sensory perception
-** Next: recognize simple patterns
-** Finally: understand the full situation
-
-* Transformer layers do the same: Early layers learn basic correlations (e.g., “high humidity often precedes rain”). Middle layers learn patterns of patterns (e.g., “humidity rising + temperature dropping”). Later layers learn abstract concepts (e.g., “passing front → likely rain tomorrow”).
-
-* Technically, each layer refines the previous one’s output with new attention and transformations. This hierarchical structure extracts progressively higher-level features. Hence layers can be thought of as the depth of reasoning of the model.
-]
-
-[[Step 6 Prediction Phase]]
-
-&lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="30" name="Step 6 Prediction Phase" tags="" position="450,1325" size="100,100">&#39;&#39;[Step 6: Prediction phase]&#39;&#39;
-
-Let&#39;s predict the Output Example (Token O) 
-
-Now we are left with the final step. We want to make a prediction from our Transformer we created above. What we do here is basically, we turn the final sequence understanding (e.g., Layer 2 Output) into a final forecast.
-
-First we determine Final Vector for Prediction: We use the hypothetical Layer 2 Output (From step 5) for Token O as a stand-in for the model&#39;s final, refined understanding of that time-step:
-
-** Final O Vector (Layer 2 Output): `[0.450, 0.350, 0.700, 0.450]`
-** Dimension: `[Temp, Wind, Humidity, Time] `
-
-Now we need a prediction rule: 
-
-The task requires a rule to predict the weather based on a dominance check across the dimensions of the final vector. We will focus on Temp (stability focus) and Humidity (rain focus): 
-
-In our toy example we can think of the following decision rule: 
-
-* If high humidity attention (Humidity value is largest)  → Predict “Rain” 
-* If stable temperature attention (Temp largest) → Predict “Sunny”
-* If mixed (e.g. Temp = Humidity) → Predict “Cloudy” 
-
-As a final step we need to apply the Rule.
-
-For that we simply compare the values of Humidity (0.700) and Temp (0.450). We see that the Humidity pattern dominates the prediction.
-
-Prediction for Token O’s conditions (17.00): Rain 
-
-[&#39;&#39;Lessons learned&#39;&#39;]
-
-The comparison between the initial Embedding and the Layer 2 Output shows how the Transformer shifts the feature weights based on the context of all other tokens; A through to Token N and its own learned focus (via the Attention Heads).
-
-(link: &quot;Restart&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="31" name="Step 4: Multi-head Attention" tags="" position="450,1075" size="100,100">[&#39;&#39;Step 4: Multi-head Attention: See patterns from multiple perspectives&#39;&#39;]
-
-In the previous step we looked at how the tokens are related to each other (attention scores). In this step we want to get more information out from each token and related this information to the other tokens. We would like to distill relevant information out in order to keep that for future steps. 
-
-For our toy example we are interested in two features: temperature and humidity. So in this step we build a multi-head attention score for temperature and humidity by extracting information out from every token. Extracting information out means simple calculating. 
-
-Let’s think of multi-head attention as different “teams”, each representing a different head. Think of each team focusing on relevant information from each token.
-
-In our example we have two teams: Team Head 1 (Temperature), and Team Head 2 (Humidity).  
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 4: Multi-head Attention]] </tw-passagedata><tw-passagedata pid="6" name="Step 4 Deep Dive" tags="" position="875,900" size="100,100">[&#39;&#39;Step 4 Deep Dive&#39;&#39;]
 
 Team Head 1: focuses on temperature similarity and picks from the original embedding the temperature and the time: 
 
@@ -802,11 +528,472 @@ So now we have extracted further information from each individual token. As we a
 
 Let&#39;s define our Q, K and V in order to capture those dependencies.
 
-[[Token O as an example]]
+For illustration let’s focus on Token O. 
+
+We have our query focuses for each head from the table above: 
+
+* `Head1 q_focus1(O) = 0.630`
+* `Head2 q_focus2(O) = 0.520`
+
+Now we want to compute raw attention scores `(we compare Q and K in this multihead attention now by calculating: q_focus × k_focus)`. Here we treat Q and K being the same values. We calculate Token O’s score against Token A and Token B as an example: 
+
+For Head 1 we get: 
+
+* `Score (O →A) = 0.630 x 0.370 = 0.233`
+* `Score (O →B) = 0.630 x 0.540 = 0.340 `
+* … 
+
+For Head 2 we get: 
+
+* `Score (O →A) = 0.520 x 0.440 = 0.229`
+* `Score (O →B) = 0.520 x 0.340 = 0.177 `
+
+Now we know how the attention between the different tokens with regards to the different “teams”. We might have a “Temperature - Team” with tokens have a high score for head 1 etc. 
+
+We need to compute “Attention Weights” (using a softmax function) .
+
+The raw scores are passed through a “Softmax function” to get attention weights. The basic idea of a softmax function is to scale the original values. Here we use a simplified Softmax by dividing each score by the sum of all raw scores for that head to get Head 1 Attn Weight
+
+&lt;table border=&quot;1&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot;&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Token k&lt;/th&gt;
+    &lt;th&gt;Head 1 Raw Score&lt;/th&gt;
+    &lt;th&gt;Head 1 Attn Weight&lt;/th&gt;
+    &lt;th&gt;Head 2 Raw Score&lt;/th&gt;
+    &lt;th&gt;Head 2 Attn Weight&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;0.233&lt;/td&gt;&lt;td&gt;0.052&lt;/td&gt;&lt;td&gt;0.229&lt;/td&gt;&lt;td&gt;0.070&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;B&lt;/td&gt;&lt;td&gt;0.340&lt;/td&gt;&lt;td&gt;0.076&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;C&lt;/td&gt;&lt;td&gt;0.151&lt;/td&gt;&lt;td&gt;0.034&lt;/td&gt;&lt;td&gt;0.385&lt;/td&gt;&lt;td&gt;0.118&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;D&lt;/td&gt;&lt;td&gt;0.466&lt;/td&gt;&lt;td&gt;0.104&lt;/td&gt;&lt;td&gt;0.260&lt;/td&gt;&lt;td&gt;0.080&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;E&lt;/td&gt;&lt;td&gt;0.372&lt;/td&gt;&lt;td&gt;0.083&lt;/td&gt;&lt;td&gt;0.468&lt;/td&gt;&lt;td&gt;0.143&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;F&lt;/td&gt;&lt;td&gt;0.126&lt;/td&gt;&lt;td&gt;0.028&lt;/td&gt;&lt;td&gt;0.250&lt;/td&gt;&lt;td&gt;0.076&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;G&lt;/td&gt;&lt;td&gt;0.353&lt;/td&gt;&lt;td&gt;0.079&lt;/td&gt;&lt;td&gt;0.094&lt;/td&gt;&lt;td&gt;0.029&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;H&lt;/td&gt;&lt;td&gt;0.422&lt;/td&gt;&lt;td&gt;0.094&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;I&lt;/td&gt;&lt;td&gt;0.347&lt;/td&gt;&lt;td&gt;0.078&lt;/td&gt;&lt;td&gt;0.354&lt;/td&gt;&lt;td&gt;0.108&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;J&lt;/td&gt;&lt;td&gt;0.384&lt;/td&gt;&lt;td&gt;0.086&lt;/td&gt;&lt;td&gt;0.333&lt;/td&gt;&lt;td&gt;0.102&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;K&lt;/td&gt;&lt;td&gt;0.170&lt;/td&gt;&lt;td&gt;0.038&lt;/td&gt;&lt;td&gt;0.374&lt;/td&gt;&lt;td&gt;0.114&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;L&lt;/td&gt;&lt;td&gt;0.107&lt;/td&gt;&lt;td&gt;0.024&lt;/td&gt;&lt;td&gt;0.385&lt;/td&gt;&lt;td&gt;0.118&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;M&lt;/td&gt;&lt;td&gt;0.321&lt;/td&gt;&lt;td&gt;0.072&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;0.447&lt;/td&gt;&lt;td&gt;0.100&lt;/td&gt;&lt;td&gt;0.177&lt;/td&gt;&lt;td&gt;0.054&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;O&lt;/td&gt;&lt;td&gt;0.397&lt;/td&gt;&lt;td&gt;0.089&lt;/td&gt;&lt;td&gt;0.270&lt;/td&gt;&lt;td&gt;0.083&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr style=&quot;font-weight: bold; &quot;&gt;
+    &lt;td&gt;Σ&lt;/td&gt;
+    &lt;td&gt;4.436&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;3.264&lt;/td&gt;
+    &lt;td&gt;1&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+Let’s stay again with Token O: 
+
+Remember we have the original embedding: `[0.6,0.6,0.5,0.7]` and we want to “update” that with the information from our multi head attention. So we need to bring in all the information from the other tokens and for that we simply multiply each multi-head score with each of the embeddings from the other tokens: 
+
+Let’s do the calculation for the Multi-head Temperature Team: 
+
+&#39;&#39;Step 1: Let’s do the calculation for the Multi-head Temperature Team:&#39;&#39;
+
+We need all the Head 1 Attn Weights from the table and multiply them with the original embedding of each token (n) and afterwards we sum them all up. Very simple calculation.
+
+(text-colour:green)[Head Output = Sum over all n Atten-Weights (O→k) x Embeddings (n) 
+
+OUT_1(O) = (0.052 x `[0.4, 0.2, 0.5, 0.3]`) + …. +(0.089 x `[0.6, 0.6,0.5,0.7]` ) 
+
+= `[0.589, 0.491, 0.446, 0.518]`
+]
+This is now the “updated” embedding, capturing all the information from the Temperature Team for Token O. 
+
+&#39;&#39;Step 2: Let’s do the same for the Multi-Head Humidity Team:&#39;&#39;
+
+Let’s do the same for the Multi-Head Humidity Team. We take the values from the table above (Head 2 Attn Weights) for each token and multiply them with the original embedding and sum them up to get the updated value for Token O: 
+
+(text-colour:green)[For Head 2,
+
+OUT_2(O) = (0.070 x `[0.4, 0.2, 0.5, 0.3]`) + …. +(0.083 x `[0.6, 0.6,0.5,0.7]` ) 
+
+= `[0.420, 0.315, 0.669, 0.380]`]
+
+Now we have all the information we could extract for Token O from all the other tokens. Finally we combine both updated embeddings into a single one to get the final attention Output for Token O:  
+
+&#39;&#39;Final Step: The Final Attention Output for Token O is the average of the two head outputs:
+&#39;&#39;
+Combine Head Outputs (Averaging) 
+
+The Final Attention Output for Token O is the average of the two head outputs: 
+
+(text-colour:green)[`Attn_Output(O) = (OUT_1(O) + OUT_2(O)) / 2` 
+
+= (`[0.589, 0.491, 0.446, 0.518]` + `[0.420, 0.315, 0.669, 0.380]`)/2 
+
+= `[0.505,0.403,0.558,0.449]`]
+
+Now this is this updated embedding captures now all the information from the two “Teams” which are relevant for Token O. Please note we just did the calculation for one Token as an example. So basically, we would need to do this for all the other tokens as well to get their updated multi-head attention scores. 
+
 
 &lt;hr&gt;
-(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]
-</tw-passagedata></tw-storydata>
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 4: Reflection task]]</tw-passagedata><tw-passagedata pid="7" name="Step 4: Reflection task" tags="" position="875,1075" size="100,100">[&#39;&#39;Step 4 Reflection task&#39;&#39;]
+
+Why does having multiple perspectives improve model understanding?
+
+(input-box:&quot;Answers are not saved or submitted.&quot;)
+
+(link:&quot;I have an explanation in mind&quot;)[&#39;&#39;Feedback&#39;&#39;
+
+Because no single perspective captures the whole story. One attention head might focus on: Temperature changes Another on: Humidity spikes Another on: Wind shifts. Each head is like a specialist. Their outputs are combined to build a richer, multi-dimensional understanding.
+
+Technically:
+
+* Each head has its own learned Q, K, V projections.
+* Different heads learn different types of relationships.
+* This allows the model to model complex patterns that would be missed by a single attention head.
+
+Multi-head attention is why transformers can learn nuanced patterns in language, images, weather, fraud, and more.]
+
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 5: Stacking Layers]]</tw-passagedata><tw-passagedata pid="8" name="Step 5: Stacking Layers" tags="" position="450,1200" size="100,100">[&#39;&#39;Step 5: Stacking layers&#39;&#39;]
+
+In this step we want to deepen the model’s reasoning by making use of different layers. In our toy example we take the “updated” embeddings from step 4 and treat these as new embeddings. This will create another layer. We treat the output from the first layer&#39;s Multi-Head Attention as the input/embedding for the second layer, illustrating refinement.
+
+&#39;&#39;Explore this in one or more of the following three ways:&#39;&#39;
+
+&lt;div style=&quot;
+  background-color:#e8f5e9;
+  border-left:6px solid #4caf50;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🌱 Intuition&lt;/strong&gt;&lt;br&gt;
+What happens: We pass the output of one layer into the next.
+
+The Simplified Logic:
+
+* Early Layers: Spot simple things (e.g., &quot;It’s getting humid&quot;).
+* Deep Layers: Spot complex trends (e.g., &quot;Humidity + Pressure Drop = Storm coming&quot;).
+
+Takeaway: Layers represent the &quot;depth&quot; of reasoning. More layers allow the model to understand abstract concepts rather than just raw correlations.
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#fff3e0;
+  border-left:6px solid #ff9800;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;
+&lt;strong&gt;🤖 How This Relates to LLMs&lt;/strong&gt;&lt;br&gt;
+Climate Case: Early layers see raw correlations; later layers see &quot;abstract concepts&quot; like a &quot;passing front&quot;.
+
+LLM Bridge Task: Deep layers in an LLM move from recognizing letters to words to sentences to complex reasoning or irony. 
+
+Reflection: If a model has 100 layers versus 10 layers, it is essentially &#39;thinking&#39; deeper. How does &#39;depth&#39; affect the model&#39;s ability to follow a complex &#39;if-then&#39; logic chain in a strategic plan?
+
+(link:&quot;Reveal&quot;) [&#39;&#39;Answer:&#39;&#39; Early layers recognize simple correlations (e.g., &quot;high humidity often precedes rain&quot;). Later layers refine these into abstract concepts (e.g., &quot;market volatility + high debt = bankruptcy risk&quot;). More layers allow for more steps of &quot;internal thought,&quot; meaning the model can handle more &quot;links&quot; in a logical chain before the reasoning breaks down. ]
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#e3f2fd;
+  border-left:6px solid #2196f3;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🔍 Deep Dive&lt;/strong&gt;&lt;br&gt;
+If you like, follow [[Step 5 Deep Dive]] for our Weather Prediction case.
+&lt;/div&gt;
+
+
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 6 Prediction Phase]]</tw-passagedata><tw-passagedata pid="9" name="Step 6 Prediction Phase" tags="" position="450,1325" size="100,100">&#39;&#39;[Step 6: Prediction phase]&#39;&#39;
+
+Let&#39;s predict the Output Example (Token O) 
+
+Now we are left with the final step. We want to make a prediction from our Transformer we created above. What we do here is basically, we turn the final sequence understanding (e.g., Layer 2 Output) into a final forecast.
+
+&#39;&#39;Explore this in one or more of the following three ways:&#39;&#39;
+
+&lt;div style=&quot;
+  background-color:#e8f5e9;
+  border-left:6px solid #4caf50;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🌱 Intuition&lt;/strong&gt;&lt;br&gt;
+What happens: The model looks at its final &quot;refined&quot; numbers and maps them to a label.
+
+The Simplified Logic:
+
+* If the &quot;Humidity&quot; signal is the strongest after all that analysis, the model predicts &quot;Rain&quot;.
+
+Executive takeaway: The &quot;magic&quot; of AI is just a series of refinements that turn messy data into a clear, weighted probability.
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#fff3e0;
+  border-left:6px solid #ff9800;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;
+&lt;strong&gt;🤖 How This Relates to LLMs&lt;/strong&gt;&lt;br&gt;
+Climate Case: The model looks at the final refined vector and predicts &quot;Rain&quot;.
+
+LLM Bridge Task: &quot;An LLM doesn&#39;t &#39;know&#39; the answer; it predicts the most probable next token based on all the previous steps. 
+
+Reflection: If the final prediction is just a &#39;best guess&#39; based on probabilities, what does this tell us about the necessity of human oversight in &#39;high-stakes&#39; AI outputs like medical or financial advice?&quot;
+
+(link:&quot;Reveal&quot;) [&#39;&#39;Answer:&#39;&#39; LLMs do not &quot;know&quot; facts; they map patterns to the most likely next token. Because the prediction is based on &quot;dominance&quot; in a vector rather than a database of truth, it can confidently predict a &quot;wrong&quot; but &quot;likely-sounding&quot; answer (a hallucination). Human oversight is required to verify that the &quot;most probable&quot; answer is also the &quot;accurate&quot; one.]
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#e3f2fd;
+  border-left:6px solid #2196f3;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🔍 Deep Dive&lt;/strong&gt;&lt;br&gt;
+If you like, follow [[Step 6 Deep Dive]] for our Weather Prediction case.
+&lt;/div&gt;
+
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata><tw-passagedata pid="10" name="Step 4: Multi-head Attention" tags="" position="450,1075" size="100,100">[&#39;&#39;Step 4: Multi-head Attention: See patterns from multiple perspectives&#39;&#39;]
+
+In the previous step we looked at how the tokens are related to each other (attention scores). In this step we want to get more information out from each token and related this information to the other tokens. We would like to distill relevant information out in order to keep that for future steps. 
+
+For our toy example we are interested in two features: temperature and humidity. So in this step we build a multi-head attention score for temperature and humidity by extracting information out from every token. Extracting information out means simple calculating. 
+
+Let’s think of multi-head attention as different “teams”, each representing a different head. Think of each team focusing on relevant information from each token.
+
+In our example we have two teams: 
+
+* Team Head 1 (Temperature)
+* Team Head 2 (Humidity).  
+
+&#39;&#39;Explore this in one or more of the following three ways:&#39;&#39;
+
+&lt;div style=&quot;
+  background-color:#e8f5e9;
+  border-left:6px solid #4caf50;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🌱 Intuition&lt;/strong&gt;&lt;br&gt;
+What happens: The model runs the attention process multiple times in parallel.
+
+The Simplified Logic:
+
+* We don&#39;t just have one &quot;weather expert.&quot; We have a &quot;Temperature Team,&quot; a &quot;Humidity Team,&quot; and a &quot;Wind Team&quot; all looking at the data at once.
+
+Takeaway: No single perspective captures the whole story. Combining these &quot;specialists&quot; creates a multi-faceted understanding.
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#fff3e0;
+  border-left:6px solid #ff9800;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;
+&lt;strong&gt;🤖 How This Relates to LLMs&lt;/strong&gt;&lt;br&gt;
+Climate Case: One &quot;team&quot; (Head) focuses on Temperature, while another focuses on Humidity.
+
+LLM Bridge Task: When an LLM reads a sentence, one &#39;Head&#39; might focus on grammar, another on the emotional tone (sentiment), and a third on factual entities like names.
+
+Reflection: Why is having &#39;multiple heads&#39; superior to a single &#39;smartest&#39; head when trying to summarize a heated board meeting transcript?
+
+(link:&quot;Reveal&quot;) [&#39;&#39;Answer:&#39;&#39; A single head might only capture the literal words spoken. Multi-head attention allows one &quot;head&quot; to focus on the facts (who said what), another on sentiment (who was angry), and another on urgency (what needs to happen next). Combining these creates a synthesis that reflects the &quot;whole story&quot; rather than just a dry transcript. ]
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#e3f2fd;
+  border-left:6px solid #2196f3;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🔍 Deep Dive&lt;/strong&gt;&lt;br&gt;
+If you like, follow [[Step 4 Deep Dive]] for our Weather Prediction case.
+&lt;/div&gt;
+
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 4: Reflection task]] 
+</tw-passagedata><tw-passagedata pid="11" name="Step 1 new reflection task" tags="" position="1300,100" size="100,100">Climate Case: Observations like &quot;18°C/low wind&quot; are discrete units in a chronological sequence.
+
+LLM Bridge Task: &quot;In our climate model, tokens are weather snapshots. In an LLM, tokens are chunks of text (parts of words). If you ask an LLM to &#39;Write a legal contract,&#39; it processes the request token-by-token. 
+
+Reflection: If the model&#39;s &#39;input window&#39; is limited, how does &#39;tokenizing&#39; a 100-page PDF vs. a 1-page memo change the model&#39;s ability to maintain consistency from start to finish?&quot;
+
+Answer: Tokenization consumes &quot;space&quot; in the model&#39;s memory (context window). For a 1-page memo, the model can &quot;see&quot; every token at once, ensuring perfect consistency. For a 100-page PDF, the model may exceed its window, meaning it &quot;forgets&quot; the beginning of the document by the time it reaches the end. This leads to contradictions or loss of context in long-form analysis. (More recent models allow for much larger context now)
+
+
+</tw-passagedata><tw-passagedata pid="12" name="Step 2 new reflection task" tags="" position="1400,100" size="100,100">Climate Case: Turning &quot;High Humidity&quot; into a numerical vector like [0.3, 0.1, 0.9, 0.1]4444.
+
+LLM Bridge Task: Embeddings turn concepts into math. In an LLM, the word &#39;CEO&#39; and &#39;Leadership&#39; are placed close together in a high-dimensional space. 
+
+Reflection: If your company uses specific jargon that doesn&#39;t exist in the general public (e.g., a proprietary project name), how might &#39;generic&#39; embeddings fail to capture the true meaning of your internal documents?&quot;.
+
+Answer: Embeddings are usually learned from general internet data. If a proprietary term like &quot;Project Blue&quot; refers to a &quot;divestiture strategy,&quot; a generic embedding might map it to &quot;color&quot; or &quot;sky&quot; instead. This causes the model to &quot;misunderstand&quot; the semantic distance between your internal concepts, leading to irrelevant or confusing outputs. </tw-passagedata><tw-passagedata pid="13" name="Step 3 new reflection task" tags="" position="1500,100" size="100,100">Climate Case: A 5:00 PM token &quot;asks&quot; (Query) the 9:00 AM token (Key) if a cold front was present to determine the 5:00 PM &quot;Value&quot;.
+
+LLM Bridge Task: &quot;In the sentence, &#39;The bank was closed because it was a holiday,&#39; the word &#39;it&#39; uses Self-Attention to &#39;look&#39; at all other words and realize it refers to &#39;the bank&#39;.
+Reflection: In a complex business email, how does this &#39;matching&#39; process help the AI distinguish between &#39;the bank&#39; (a building) and &#39;the bank&#39; (a river edge) based on surrounding context?&quot;
+
+Answer: The &quot;Query&quot; for the word bank looks at the &quot;Keys&quot; of nearby words. If it finds keys like water or flow, the attention score for &quot;river&quot; becomes high. If it finds interest or vault, the attention shifts to &quot;finance&quot;. This dynamic weighting is why LLMs can handle linguistic nuances that older, &quot;rule-based&quot; AI could not.
+</tw-passagedata><tw-passagedata pid="14" name="Step 4 new reflection task" tags="" position="1300,200" size="100,100">Climate Case: One &quot;team&quot; (Head) focuses on Temperature, while another focuses on Humidity.
+
+LLM Bridge Task: &quot;When an LLM reads a sentence, one &#39;Head&#39; might focus on grammar, another on the emotional tone (sentiment), and a third on factual entities like names. 
+Reflection: Why is having &#39;multiple heads&#39; superior to a single &#39;smartest&#39; head when trying to summarize a heated board meeting transcript?&quot;
+
+Answer: A single head might only capture the literal words spoken. Multi-head attention allows one &quot;head&quot; to focus on the facts (who said what), another on sentiment (who was angry), and another on urgency (what needs to happen next). Combining these creates a synthesis that reflects the &quot;whole story&quot; rather than just a dry transcript. </tw-passagedata><tw-passagedata pid="15" name="Step 5 new reflection task" tags="" position="1400,200" size="100,100">Climate Case: Early layers see raw correlations; later layers see &quot;abstract concepts&quot; like a &quot;passing front&quot;.
+
+LLM Bridge Task: &quot;Deep layers in an LLM move from recognizing letters to words to sentences to complex reasoning or irony. 
+
+Reflection: If a model has 100 layers versus 10 layers, it is essentially &#39;thinking&#39; deeper. How does &#39;depth&#39; affect the model&#39;s ability to follow a complex &#39;if-then&#39; logic chain in a strategic plan?&quot;.
+
+Answer: Early layers recognize simple correlations (e.g., &quot;high humidity often precedes rain&quot;). Later layers refine these into abstract concepts (e.g., &quot;market volatility + high debt = bankruptcy risk&quot;). More layers allow for more steps of &quot;internal thought,&quot; meaning the model can handle more &quot;links&quot; in a logical chain before the reasoning breaks down.</tw-passagedata><tw-passagedata pid="16" name="Step 6 new reflection task" tags="" position="1500,200" size="100,100">Climate Case: The model looks at the final refined vector and predicts &quot;Rain&quot;.
+
+LLM Bridge Task: &quot;An LLM doesn&#39;t &#39;know&#39; the answer; it predicts the most probable next token based on all the previous steps. 
+
+Reflection: If the final prediction is just a &#39;best guess&#39; based on probabilities, what does this tell us about the necessity of human oversight in &#39;high-stakes&#39; AI outputs like medical or financial advice?&quot;
+
+Answer: LLMs do not &quot;know&quot; facts; they map patterns to the most likely next token. Because the prediction is based on &quot;dominance&quot; in a vector rather than a database of truth, it can confidently predict a &quot;wrong&quot; but &quot;likely-sounding&quot; answer (a hallucination). Human oversight is required to verify that the &quot;most probable&quot; answer is also the &quot;accurate&quot; one.</tw-passagedata><tw-passagedata pid="17" name="Step 3: Build Self Attention" tags="" position="50,900" size="100,100">[&#39;&#39;Step 3: Build self-attention&#39;&#39;]
+
+So, the raw information has been stored into the embeddings. In the following steps we will get to the key of the transformer architecture in that we want to extract some more information out from the data. As a first step to that we use the concept of “attention” in order to extract some more information out from each token and how its related to other tokens. In our toy example we are interested in two things: temperature and humidity.
+
+First, we want to know how the tokens are related to each other. You can think of it that each token 
+
+* “Asks” a question (Q) to all the other tokens 
+* All the other tokens respond with an answer (K)
+* What is relevant between them gets captured in a value (V). 
+
+So for this step we define 3 new features: Q, K and V. For each token these new features are calculated (In our toy example they are given) In the transformer architecture these are also called: 
+
+* Q = Question - (“What do I need?”) 
+* K = Key - (“What do I offer?”) 
+* V = Value - (“What info is carried forward?”)  
+
+
+&#39;&#39;Explore this in one or more of the following three ways:&#39;&#39;
+
+
+&lt;div style=&quot;
+  background-color:#e8f5e9;
+  border-left:6px solid #4caf50;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🌱 Intuition&lt;/strong&gt;&lt;br&gt;
+What happens: Every token &quot;looks&quot; at every other token to see what is relevant.
+
+The Simplified Logic:
+
+* Query (Q): &quot;I am a 5:00 PM token. What happened earlier that affects me?&quot;.
+* Key (K): &quot;I am a 9:00 AM token. I have data about a cold front&quot;.
+* Value (V): The actual information passed forward.
+
+Takeaway: This is how the model ignores &quot;noise&quot; and focuses on &quot;signals.&quot; A temperature spike only matters if the previous hours were cold.
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#fff3e0;
+  border-left:6px solid #ff9800;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;
+&lt;strong&gt;🤖 How This Relates to LLMs&lt;/strong&gt;&lt;br&gt;
+Climate Case: A 5:00 PM token &quot;asks&quot; (Query) the 9:00 AM token (Key) if a cold front was present to determine the 5:00 PM &quot;Value&quot;.
+
+LLM Bridge Task: &quot;In the sentence, &#39;The bank was closed because it was a holiday,&#39; the word &#39;it&#39; uses Self-Attention to &#39;look&#39; at all other words and realize it refers to &#39;the bank&#39;.
+
+Reflection: In a complex business email, how does this &#39;matching&#39; process help the AI distinguish between &#39;the bank&#39; (a building) and &#39;the bank&#39; (a river edge) based on surrounding context?&quot;
+
+(link:&quot;Reveal&quot;) [&#39;&#39;Answer:&#39;&#39; The &quot;Query&quot; for the word bank looks at the &quot;Keys&quot; of nearby words. If it finds keys like water or flow, the attention score for &quot;river&quot; becomes high. If it finds interest or vault, the attention shifts to &quot;finance&quot;. This dynamic weighting is why LLMs can handle linguistic nuances that older, &quot;rule-based&quot; AI could not.]
+
+&lt;/div&gt;
+
+&lt;div style=&quot;
+  background-color:#e3f2fd;
+  border-left:6px solid #2196f3;
+  padding:12px;
+  margin:8px 0;
+&quot;&gt;&lt;strong&gt;🔍 Deep Dive&lt;/strong&gt;&lt;br&gt;
+If you like, follow this [[Step 3 Deep Dive]] pathway to work through Q, K and V for our Weather Prediction case.
+&lt;/div&gt;
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 3 Reflection task]] </tw-passagedata><tw-passagedata pid="18" name="Step 5 Deep Dive" tags="" position="700,1200" size="100,100">&#39;&#39;Step 5 Deep Dive&#39;&#39;
+
+Part 1: Layer 1 Output becomes Layer 2 Input 
+
+* The final Attention Output from Task 4 becomes the new refined embedding for Token O to be used in the next conceptual layer: 
+** Layer 1 Output for O =  `[0.505, 0.403, 0.558, 0.449]`
+** Layer 2 Input Embedding for O: `[0.505, 0.403, 0.558, 0.449]`
+
+Part 2: Second Layer Recalculation (Conceptual) 
+
+In a real model, this new vector would be passed through another Multi-Head Attention block, then a Feed-Forward Network, etc., just like the first layer. This process refines the understanding.
+
+Conceptual Example of Refinement: 
+
+Layer 1 Output for O =  `[0.505, 0.403, 0.558, 0.449]`
+* Interpretation: Token O has a moderate to high temperature influence (0.505) and humidity influence (0.558). the model has largely captured the raw correlations (e.g. 17:00 being warm and damp) 
+
+Hypothetical Layer 2 Output: Let’s say after Layer 2 attention (which now uses the refined vectors of all tokens as input) the new vector for O is 
+
+Layer 2 Output for O =  `[0.450, 0.350, 0.700, 0.450]`
+
+* Interpretation: After comparing Os Layer 1 output to the others, Layer 2 determined that the Humidity influence is much more critical (0.700) for 17:00 conditions, indicating a potential focus on an approaching system (high humidity at the end of a warm day). This is the refinement - moving from simple correlations to high-level pattern recognition.  
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 5: Reflection task]]</tw-passagedata><tw-passagedata pid="19" name="Step 5: Reflection task" tags="" position="900,1200" size="100,100">&lt;div style=&quot;
+  background-color: #fff3cd;
+  border-left: 6px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 15px;
+&quot;&gt;&lt;strong&gt;🧠 Think about this:&lt;/strong&gt;&lt;br&gt;
+How is this similar to how humans refine understanding?
+&lt;/div&gt;
+Use the space provided to think through your answer.
+
+(input-box:&quot;Answers are not saved or submitted.&quot;)
+
+(link:&quot;I have an explanation in mind&quot;)[&#39;&#39;Feedback:&#39;&#39;
+
+Layers build knowledge step-by-step, just like we do. Human example:
+* First look: raw sensory perception
+* Next: recognize simple patterns
+* Finally: understand the full situation
+ 
+Transformer layers do the same: Early layers learn basic correlations (e.g., “high humidity often precedes rain”). Middle layers learn patterns of patterns (e.g., “humidity rising + temperature dropping”). Later layers learn abstract concepts (e.g., “passing front → likely rain tomorrow”). Technically, each layer refines the previous one’s output with new attention and transformations. This hierarchical structure extracts progressively higher-level features. Hence layers can be thought of as the depth of reasoning of the model.]
+
+
+&lt;hr&gt;
+(link: &quot;🏠 Home&quot;)[(goto: &quot;Introduction&quot;)]  |  [[Step 6 Prediction Phase]] </tw-passagedata><tw-passagedata pid="20" name="Step 6 Deep Dive" tags="" position="700,1400" size="100,100">&#39;&#39;Step 6 Deep Dive&#39;&#39;
+
+First we determine the final vector for Prediction: We use the hypothetical Layer 2 Output (from step 5) for Token O as a stand-in for the model&#39;s final, refined understanding of that time-step:
+ 
+(text-colour:green)[Final O Vector (Layer 2 Output): `[0.450, 0.350, 0.700, 0.450]`
+Dimension: `[Temp, Wind, Humidity, Time]`]
+ 
+Now we need a prediction rule:
+The task requires a rule to predict the weather based on a dominance check across the dimensions of the final vector. We will focus on Temp (stability focus) and Humidity (rain focus):
+In our toy example we can think of the following decision rule:
+* If high humidity attention (Humidity value is largest)  → Predict “Rain”
+* If stable temperature attention (Temp largest) → Predict “Sunny”
+* If mixed (e.g. Temp = Humidity) → Predict “Cloudy”
+ 
+&#39;&#39;Question:&#39;&#39; Apply this rule to Layer 2 Output for token O!  
+
+(link:&quot;Reveal&quot;)[&#39;&#39;Answer:&#39;&#39; 
+
+For that we simply compare the values of Humidity (0.700) and Temp (0.450). 
+
+We see that the Humidity pattern dominates the prediction
+ 
+Prediction for token O’s conditions (17.00): Rain]
+ 
+The comparison between the initial Embedding and the Layer 2 Output shows how the Transformer shifts the feature weights based on the context of all other tokens A through to Token N and its own learned focus (via the Attention Heads).
+
+&lt;hr&gt;
+(link: &quot;Restart&quot;)[(goto: &quot;Introduction&quot;)]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
